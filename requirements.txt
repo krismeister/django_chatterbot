@@ -1,2 +1,4 @@
 django>=1.8.0
+psycopg2
 chatterbot>=0.2.2
+python-Levenshtein
