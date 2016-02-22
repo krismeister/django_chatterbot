@@ -32,18 +32,18 @@ Quick start
 Docker Quick start
 ------------------
 
-1. If you have [`docker-compose`](https://docs.docker.com/compose/) installed:
+1. If you have [`docker-compose`](https://docs.docker.com/compose/) installed::
 
     docker-compose up
 
-2. Otherwise, build the docker image:
+2. Otherwise, build the docker image::
 
     docker build -t django_chatterbot .
 
-3. Then run the container:
+3. Then run the container::
 
     docker run -it -p 8000:8000 django_chatterbot
 
-4. Open the web app in a browser (assuming you have `docker-machine`):
+4. Open the web app in a browser (assuming you have `docker-machine`)::
 
     open http://$(docker-machine ip default):8000
