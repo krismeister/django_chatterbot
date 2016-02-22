@@ -5,6 +5,12 @@ from chatterbot import ChatBot
 
 chatterbot = ChatBot(
     'Example ChatterBot',
+    logic_adapters=[
+        "chatterbot.adapters.logic.ClosestMatchAdapter",
+        "chatterbot.adapters.logic.EvaluateMathematically",
+        "chatterbot.adapters.logic.TimeLogicAdapter"
+#        "chatterbot.adapters.logic.WeatherLogicAdapter"
+    ],
     io_adapter="chatterbot.adapters.io.JsonAdapter"
 )
 
