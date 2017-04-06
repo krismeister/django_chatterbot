@@ -8,42 +8,22 @@ app using
 [Django REST framework](http://www.django-rest-framework.org) and
 [ChatterBot](https://github.com/gunthercox/ChatterBot).
 
-Quick start
------------
-
-1. Add "django_chatterbot" to your INSTALLED_APPS setting like this::
-
-    INSTALLED_APPS = (
-        ...
-        'django_chatterbot',
-    )
-
-2. Include the django_chatterbot URLconf in your project urls.py like this::
-
-    url(r'^chatterbot/', include('django_chatterbot.urls')),
-
-3. Run `python manage.py migrate` to create the chatterbot models.
-
-4. Start the development server and visit http://127.0.0.1:8000/admin/
-   to create a poll (you'll need the Admin app enabled).
-
-5. POST to http://127.0.0.1:8000/chatterbot/ to start a conversation.
-
 Docker Quick start
 ------------------
 
-1. If you have [`docker-compose`](https://docs.docker.com/compose/) installed::
-
+1. Install [`docker-compose`](https://docs.docker.com/compose/):
+2. Build the project
+    docker-compose build
+3. Set the admin password
+    docker-compose run web python manage.py createsuperuser
+4. Run the project
     docker-compose up
+5. Visit http://localhost:8000/ to chat, visit http://localhost:8000/admin/ to edit the responses.
 
-2. Otherwise, build the docker image::
+Out of the box Training Data
+----------------------------
+The following modules are loaded out of the box:
+1. english.greetings
+2. english.ai
 
-    docker build -t django_chatterbot .
-
-3. Then run the container::
-
-    docker run -it -p 8000:8000 django_chatterbot
-
-4. Open the web app in a browser (assuming you have `docker-machine`)::
-
-    open http://$(docker-machine ip default):8000
+Additional training data can be found from [Chatterbot Corpus](https://github.com/gunthercox/chatterbot-corpus)
