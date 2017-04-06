@@ -1,18 +1,25 @@
 from django.views.generic import View
 from django.http import JsonResponse
 from chatterbot import ChatBot
+from chatterbot.trainers import ChatterBotCorpusTrainer
 
 
 chatterbot = ChatBot(
     'Example ChatterBot',
     logic_adapters=[
-        "chatterbot.adapters.logic.ClosestMatchAdapter",
-        "chatterbot.adapters.logic.EvaluateMathematically",
-        "chatterbot.adapters.logic.TimeLogicAdapter"
+        "chatterbot.logic.BestMatch",
+        "chatterbot.logic.MathematicalEvaluation",
+        "chatterbot.logic.TimeLogicAdapter"
 #        "chatterbot.adapters.logic.WeatherLogicAdapter"
     ],
-    io_adapter="chatterbot.adapters.io.JsonAdapter"
+    io_adapter="chatterbot.storage.JsonFileStorageAdapter"
 )
+
+# Training with Corpus file example:
+# http://chatterbot.readthedocs.io/en/stable/training.html#training-with-corpus-data
+
+# Specify Training File
+chatterbot.set_trainer(ChatterBotCorpusTrainer)
 
 # Train based on the english corpus
 chatterbot.train("chatterbot.corpus.english")
