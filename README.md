@@ -10,7 +10,7 @@ docker-compose build
 ```
 3. Set the admin password
 ```
-docker-compose builddocker-compose run web python manage.py createsuperuser
+docker-compose run web python manage.py createsuperuser
 ```
     
 4. Run the project
