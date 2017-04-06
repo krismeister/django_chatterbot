@@ -8,6 +8,9 @@ RUN python -m textblob.download_corpora
 ADD . /code/
 WORKDIR /code/example
 
+RUN python manage.py migrate
+RUN python manage.py train
+
 EXPOSE 8000
 
 CMD python manage.py runserver 0.0.0.0:8000
