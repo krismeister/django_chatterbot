@@ -23,6 +23,7 @@ Docker Quick start
 Out of the box Training Data
 ----------------------------
 The following modules are loaded out of the box:
+
 1. english.greetings
 2. english.ai
 
