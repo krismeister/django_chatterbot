@@ -1,9 +1,7 @@
-=================
-Django ChatterBot
-=================
 
-Docker Quick start
-------------------
+# Django ChatterBot
+
+## Docker Quick start
 
 1. Install [`docker-compose`](https://docs.docker.com/compose/):
 2. Build the project
@@ -14,8 +12,8 @@ Docker Quick start
     docker-compose up
 5. Visit http://localhost:8000/ to chat, visit http://localhost:8000/admin/ to edit the responses.
 
-Out of the box Training Data
-----------------------------
+## Out of the box Training Data
+
 The following modules are loaded out of the box:
 
 1. english.greetings
