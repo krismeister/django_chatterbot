@@ -5,11 +5,20 @@
 
 1. Install [`docker-compose`](https://docs.docker.com/compose/):
 2. Build the project
-    docker-compose build
+```
+docker-compose build
+```
 3. Set the admin password
-    docker-compose run web python manage.py createsuperuser
+```
+docker-compose builddocker-compose run web python manage.py createsuperuser
+```
+    
 4. Run the project
-    docker-compose up
+
+```
+docker-compose up
+```
+    
 5. Visit http://localhost:8000/ to chat, visit http://localhost:8000/admin/ to edit the responses.
 
 ## Out of the box Training Data
